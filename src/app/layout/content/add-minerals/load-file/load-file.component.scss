@@ -1,0 +1,15 @@
+/* Centrer l'icône et définir sa hauteur */
+.upload-icon {
+  height: 100px;
+  width: 100px; /* Hauteur de l'icône */
+  margin: 10% calc(50% - 50px);
+  display: flex; /* Utiliser flexbox pour centrer */
+  align-items: center; /* Centrer verticalement */
+  justify-content: center; /* Centrer horizontalement */
+  border: 1px solid darkgray;
+  border-radius: 50%;
+}
+
+.row {
+  padding: 0 2%;
+}

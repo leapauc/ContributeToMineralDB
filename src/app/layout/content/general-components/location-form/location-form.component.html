@@ -1,0 +1,110 @@
+<div>
+  <br>
+  <div class="row">
+    <div class="col-10 offset-1">
+      <p>Ajouter une localisation</p>
+    </div>
+  </div>
+  <form [formGroup]="locationForm" (ngSubmit)="editingIndex !== null ? updateLocation() : addLocation()">
+    <div class="row align-items-end"> <!-- Ajout de align-items-end pour aligner verticalement -->
+      <div class="col-3 offset-1">
+        <label for="country" class="col-md-12 col-form-label">Choix pays</label>
+        <div class="col-md-12">
+          <select formControlName="country" class="form-select" id="country">
+            <option value="" disabled>Sélectionnez un pays</option>
+            <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-6">
+        <label for="description" class="col-md-12 col-form-label">Description</label>
+        <div class="col-md-12">
+          <input formControlName="description" class="form-control" type="text" id="description" placeholder="Description" />
+        </div>
+      </div>
+      <div class="col-1"> <!-- Ajustez la largeur de la colonne pour le bouton -->
+        <button type="submit" class="action-button">
+          <ng-container *ngIf="editingIndex !== null; else addButton">
+            <i class="fas fa-sync-alt"></i>
+          </ng-container>
+          <ng-template #addButton>
+            <i class="fas fa-plus"></i>
+          </ng-template>
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <div class="row">
+    <div class="col-10 offset-1">
+      <br>
+      <p>Localisations ajoutées</p>
+    </div>
+  </div>
+  <div class="row">
+    <div *ngFor="let loc of locations; let i = index" style="display: flex; align-items: center;">
+      <div class="col-md-1 offset-md-1 col-sm-2 offset-sm-1">
+        <div class="row">
+          <div class="col-5 offset-1">
+            <button (click)="editLocation(i)" style="background-color: blue; color: white; border: none; border-radius: 4px; padding: 0; display: flex; align-items: center; justify-content: center; width: 30px; height: 30px;">
+              <mat-icon style="font-size: 20px;">edit</mat-icon>
+            </button>
+          </div>
+          <div class="col-5">
+            <button (click)="deleteLocation(i)" style="background-color: red; color: white; border: none; border-radius: 4px; padding: 0; display: flex; align-items: center; justify-content: center; width: 30px; height: 30px;">
+              <mat-icon style="font-size: 20px;">delete</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-10 col-sm-7 offset-sm-1" style="opacity:0.7;">
+        <span>{{ loc.country }}: {{ loc.description }}</span>
+      </div>
+    </div>
+  </div>
+  <br>
+  <!--MODAL-->
+  <div class="card-body">
+    <div class="row gy-3">
+      <!-- Modal Sizes -->
+      <div class="col-lg-4 col-md-6">
+        <!-- Small Modal -->
+        <div *ngIf="confirmDelete" class="modal fade" id="smallModal" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+              <!-- Bouton de fermeture dans le coin supérieur droit -->
+              <button type="button" class="btn-close rounded-circle" (click)="cancelDelete()" aria-label="Close">
+              </button>
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel2">About to delete</h5>
+              </div>
+              <div class="modal-body">
+                <div class="center">
+                  <img width="100" height="100" src="https://img.icons8.com/office/100/globe-earth.png" alt="globe-earth"/>
+                </div>
+                <p>You are about to delete a location.</p>
+                <p>This location is:</p>
+                <div class="center">
+                  <p *ngIf="deleteIndex !== null">
+                    <strong>
+                      {{ locations[deleteIndex].country }}: {{ locations[deleteIndex].description }}
+                    </strong>
+                  </p>
+                </div>
+                <br>
+                <p>Do you confirm the deletion ?</p>
+              </div>
+              <div class="modal-footer">
+                <button (click)="cancelDelete()" type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                  Cancel
+                </button>
+                <button (click)="confirmDeleteLocation()" type="button" class="btn btn-primary">Confirm</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

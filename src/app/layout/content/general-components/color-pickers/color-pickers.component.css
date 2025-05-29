@@ -1,0 +1,43 @@
+.selected-colors {
+  display: flex; /* Utiliser Flexbox pour l'affichage horizontal */
+  flex-wrap: wrap; /* Permettre le passage à la ligne lorsque la ligne est pleine */
+  gap: 2%; /* Espacement entre les éléments */
+}
+
+.color-box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  width: 150px; /* Largeur par défaut pour les écrans larges */
+}
+
+.color-info {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.color-display {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%; /* Cercle */
+  margin-right: 10px;
+}
+
+.rgb-display {
+  display: flex;
+  flex-direction: column;
+}
+
+.remove-btn {
+  background-color: red; /* Couleur de fond rouge */
+  color: white;          /* Couleur du texte blanche */
+  border: none;         /* Pas de bordure */
+  padding: 5px 10px;    /* Espacement */
+  border-radius: 5px;   /* Coins arrondis */
+  cursor: pointer;       /* Curseur en forme de main */
+}
+
+.remove-btn:hover {
+  opacity: 0.8;          /* Légère transparence au survol */
+}

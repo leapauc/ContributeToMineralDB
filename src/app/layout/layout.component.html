@@ -1,0 +1,12 @@
+<div class="layout">
+  <app-header (toggleSidebar)="toggleSidebar()"></app-header>
+
+  <div class="main">
+    <app-sidebar [isCollapsed]="isSidebarCollapsed"></app-sidebar>
+    <div class="content-wrapper" [class.collapsed]="isSidebarCollapsed">
+      <app-content></app-content>
+    </div>
+  </div>
+
+  <app-footer></app-footer>
+</div>

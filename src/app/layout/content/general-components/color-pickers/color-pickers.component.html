@@ -1,0 +1,32 @@
+<!-- Assurez-vous d'inclure la feuille de style Font Awesome dans le <head> de votre index.html -->
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  </head>
+
+  <div>
+    <fieldset>
+      <label>Select a color: </label>
+      <input type="color" class="form-control form-control-color" id="exampleColorInput" [(ngModel)]="colorInput" title="Choose your color">
+      <button (click)="addColor()" class="btn btn-primary mt-2">Add Color</button>
+      <br>
+      <br>
+      <p>Color of the mineral:</p>
+      <div class="selected-colors">
+        <div *ngFor="let color of selectedColors; let i = index" class="color-box">
+          <div class="color-info">
+            <div class="color-display" [style.background]="color.color"></div>
+            <div class="rgb-display">
+              <span>R: {{color.r}}</span>
+              <span>G: {{color.g}}</span>
+              <span>B: {{color.b}}</span>
+            </div>
+          </div>
+          <button (click)="removeColor(i)" class="remove-btn">
+            <i class="fas fa-trash-alt"></i> <!-- Font Awesome trash can icon -->
+          </button>
+        </div>
+      </div>
+    </fieldset>
+    <br>
+    <br>
+  </div>

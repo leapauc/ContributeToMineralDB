@@ -1,0 +1,42 @@
+.sidebar {
+  width: 200px;
+  background-color: #eeeeee;
+  transition: width 0.3s ease;
+  padding: 1rem;
+  box-sizing: border-box;
+  height: calc(100vh - 100px); // moins header et footer
+
+  &.collapsed {
+    width: 60px;
+    overflow: hidden;
+  }
+
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    margin-bottom: 1rem;
+  }
+
+  nav ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin: 1rem 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+  }
+  .margin-sidebar10 {
+    padding: 0 0 0 10%;
+  }
+
+  h4 {
+    padding: 0 0 0 5%;
+  }
+}

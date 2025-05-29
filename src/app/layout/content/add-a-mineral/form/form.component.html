@@ -1,0 +1,1241 @@
+<!-- tabs.component.html -->
+<div class="nav-align-top">
+  <ul class="nav nav-tabs nav-fill" role="tablist">
+    <li class="nav-item">
+      <button
+        type="button"
+        class="nav-link"
+        [class.active]="activeTab === 'classif'"
+        (click)="setActiveTab('classif')"
+      >
+        <i class="tf-icons bx bx-folder"></i> <strong>Classif.</strong>
+        <span
+          class="badge rounded-pill badge-center h-px-20 w-px-20 bg-label-danger"
+          >3</span
+        >
+      </button>
+    </li>
+    <li class="nav-item">
+      <button
+        type="button"
+        class="nav-link"
+        [class.active]="activeTab === 'properties'"
+        (click)="setActiveTab('properties')"
+      >
+        <i class="tf-icons bx bx-cog"></i> <strong>Properties</strong>
+      </button>
+    </li>
+    <li class="nav-item">
+      <button
+        type="button"
+        class="nav-link"
+        [class.active]="activeTab === 'color'"
+        (click)="setActiveTab('color')"
+      >
+        <i class="bx bx-palette"></i> <strong>Color</strong>
+      </button>
+    </li>
+    <li class="nav-item">
+      <button
+        type="button"
+        class="nav-link"
+        [class.active]="activeTab === 'history'"
+        (click)="setActiveTab('history')"
+      >
+        <i class="bx bx-history"></i> <strong>History</strong>
+        <span
+          class="badge rounded-pill badge-center h-px-20 w-px-20 bg-label-danger"
+          >3</span
+        >
+      </button>
+    </li>
+    <li class="nav-item">
+      <button
+        type="button"
+        class="nav-link"
+        [class.active]="activeTab === 'location'"
+        (click)="setActiveTab('location')"
+      >
+        <i class="bx bx-current-location"></i> <strong>Location</strong>
+      </button>
+    </li>
+    <li class="nav-item">
+      <button
+        type="button"
+        class="nav-link"
+        [class.active]="activeTab === 'user'"
+        (click)="setActiveTab('user')"
+      >
+        <i class="tf-icons bx bx-user"></i> <strong>About you</strong>
+      </button>
+    </li>
+  </ul>
+  <div class="tab-content">
+    <div
+      [ngClass]="{
+        'tab-pane': true,
+        fade: true,
+        show: activeTab === 'classif',
+        active: activeTab === 'classif'
+      }"
+    >
+      <div class="row">
+        <div class="col-5 offset-1">
+          <br />
+          <label for="name" class="form-label">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            placeholder="Quartz"
+            aria-describedby="name_Help"
+          />
+        </div>
+        <div class="col-5">
+          <br />
+          <label for="group" class="form-label">Group</label>
+          <input
+            type="text"
+            class="form-control"
+            id="group"
+            placeholder="Group name"
+            aria-describedby="group_Help"
+          />
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-5 offset-1">
+          <div class="mb-3">
+            <label for="stuntz" class="form-label">Stuntz</label>
+            <select
+              class="form-select"
+              id="stuntz"
+              aria-label="Default select example"
+            >
+              <option value="">---None---</option>
+              <optgroup label="I. Natif element">
+                <option value="I. - 1. A/B/C/D">
+                  1. A/B/C/D: natif element
+                </option>
+              </optgroup>
+              <optgroup label="II. Sulfur and Sulfosalt">
+                <option value="II. - 2. A/B/C/D/E">
+                  2. A/B/C/D/E: sulfur category
+                </option>
+                <option value="II. - 2. F/G">2. F/G: arseniur category</option>
+                <option value="II. - 2. H/J/K/L/M">
+                  2. H/J/K/L/M: sulfosalt category
+                </option>
+              </optgroup>
+              <optgroup label="III. Halide">
+                <option value="III. - 3. A/B/C/D">
+                  3. A/B/C/D: halide mineral
+                </option>
+              </optgroup>
+              <optgroup label="IV. Oxyde Hydroxyde">
+                <option value="IV. - 4. A/B/C/D/E">
+                  4. A/B/C/D/E: sulfur category
+                </option>
+                <option value="IV. - 4. F/G">4. F/G: arseniur category</option>
+                <option value="IV. - 4. H">4. H: sulfosalt category</option>
+                <option value="arsenite">
+                  IV. - 4. JA/JB/JC/JD - arsenite category
+                </option>
+                <option value="antimoine">
+                  IV. - 4. JA/JB/JC/JD - antimoine category
+                </option>
+                <option value="bismuthite">
+                  IV. - 4. JA/JB/JC/JD - bismuthite category
+                </option>
+                <option value="IV. - 4. JE">4. JE: sulfite category</option>
+                <option value="IV. - 4. JF/JG/JH/JJ">
+                  4. JF/JG/JH/JJ: selenite category
+                </option>
+                <option value="IV. - 4. JK/JL/JM/JN">
+                  4. JK/JL/JM/JN: tellurite category
+                </option>
+                <option value="IV. - 4. K">4. K: iodate category</option>
+              </optgroup>
+              <optgroup label="V. Carbonat Nitrat">
+                <option value="V. - 5. A/B/C/D/E">
+                  5. A/B/C/D/E: carbonate category
+                </option>
+                <option value="V. - 5. N">5. N: nitrate category</option>
+              </optgroup>
+              <optgroup label="VI. Borate">
+                <option value="VI. - 6. A/B/C/D/E/F/G/H">
+                  6. A/B/C/D/E/F/G/H: borate category
+                </option>
+              </optgroup>
+              <optgroup
+                label="VII. Sulfate, Seleniate, Tellurate, Chromate, Molybdate, Tungstate"
+              >
+                <option value="VII. - 7. A/B/C/D/E/J">
+                  7. A/B/C/D/E/J: sulfate category
+                </option>
+                <option value="seleniate">
+                  VII. 7. A/B/C/D - seleniate category
+                </option>
+                <option value="tellurate">
+                  VII. 7. A/B/C/D - tellurate category
+                </option>
+                <option value="VII. - 7. F">7. F: chromate category</option>
+                <option value="molybdate">
+                  VII. 7. G/H - molybdate category
+                </option>
+                <option value="tungstate">
+                  VII. 7. G/H - tungstate category
+                </option>
+              </optgroup>
+              <optgroup label="VIII. Phosphate, Arseniate, Vanadate">
+                <option value="VIII. - 8. A/B/C/D/E/F">
+                  8. A/B/C/D/E/F: phophate category
+                </option>
+                <option value="VIII. - 8. A/B/C/E/F">
+                  8. A/B/C/E/F: arseniate category
+                </option>
+                <option value="VIII. - 8. A/B/D/F">
+                  8. A/B/D/F: vanadate category
+                </option>
+              </optgroup>
+              <optgroup label="IX. Silicate">
+                <option value="IX. - 9. A">9. A: nesosilicate category</option>
+                <option value="IX. - 9. B">9. B: sorosilicate category</option>
+                <option value="IX. - 9. C">9. C: cyclosilicate category</option>
+                <option value="IX. - 9. D">9. D: inosilicate category</option>
+                <option value="IX. - 9. E">
+                  9. E: phyllosilicate category
+                </option>
+                <option value="IX. - 9. F/G">
+                  9. F/G: tectosilicate category
+                </option>
+                <option value="IX. - 9. H">
+                  9. H: other silicate category
+                </option>
+                <option value="IX. - 9. J">9. J: germanate category</option>
+              </optgroup>
+              <optgroup label="X. Organic mineral">
+                <option value="X. - 10. A/B/C">
+                  10. A/B/C: organic mineral category
+                </option>
+              </optgroup>
+            </select>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-5 offset-1">
+          <div class="mb-3">
+            <label for="crytal_system" class="form-label"
+              >Crystallin system</label
+            >
+            <select
+              class="form-select"
+              id="crytal_system"
+              aria-label="Default select example"
+              multiple
+            >
+              <option value="">---None---</option>
+              <option value="crystalSystem1">Cubic - Isometric</option>
+              <option value="crystalSystem2">Tetragonal</option>
+              <option value="crystalSystem3">Orthorhombic</option>
+              <option value="crystalSystem4">Hexagonal</option>
+              <option value="crystalSystem5">Trigonal</option>
+              <option value="crystalSystem6">Monoclinic</option>
+              <option value="crystalSystem7">Triclinic</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-5">
+          <div class="mb-3">
+            <label for="crytal_class" class="form-label"
+              >Crystallin class</label
+            >
+            <select
+              class="form-select"
+              id="crytal_class"
+              aria-label="Default select example"
+              multiple
+            >
+              <option value="">---None---</option>
+              <optgroup label="Cubic-Isometric">
+                <option value="crystalSystem1">
+                  1. pentagonotritetrahedron
+                </option>
+                <option value="crystalSystem2">
+                  2. diplohedron dodecahedron
+                </option>
+                <option value="crystalSystem3">3. pentagonotrioctaedric</option>
+                <option value="crystalSystem4">
+                  4. hexotetrahedron to tetrahedron
+                </option>
+                <option value="crystalSystem5">
+                  5. hexooctahedron to cube
+                </option>
+              </optgroup>
+              <optgroup label="Tetragonal">
+                <option value="crystalSystem1">6. tetragonal pyramid</option>
+                <option value="crystalSystem2">
+                  7. tetragonal trapezohedron
+                </option>
+                <option value="crystalSystem3">8. tetragonal dipyramid</option>
+                <option value="crystalSystem4">
+                  9. tetragonal trapezohedron
+                </option>
+                <option value="crystalSystem5">10. ditetragonal pyramid</option>
+                <option value="crystalSystem4">
+                  11. tetragonal scalenohedron
+                </option>
+                <option value="crystalSystem5">
+                  12. ditetragonal dipyramid
+                </option>
+              </optgroup>
+              <optgroup label="Orthorhombic">
+                <option value="crystalSystem1">
+                  13. orthohorhombic tetrahedron
+                </option>
+                <option value="crystalSystem2">14. orthothombic pyramid</option>
+                <option value="crystalSystem3">
+                  15. octaedre orthorhombic
+                </option>
+              </optgroup>
+              <optgroup label="Hexagonal">
+                <option value="crystalSystem1">16. hexagonal pyramid</option>
+                <option value="crystalSystem2">17. triangular dipyramid</option>
+                <option value="crystalSystem3">18. hexagonal dipyramid</option>
+                <option value="crystalSystem1">19. hexagonal trapezoid</option>
+                <option value="crystalSystem2">
+                  20. pyramid dihexagonal or pyramid hexagonale
+                </option>
+                <option value="crystalSystem3">
+                  21. dipyramid prism or ditrigonal prism
+                </option>
+                <option value="crystalSystem3">
+                  22. dipyramid dihexagonal
+                </option>
+              </optgroup>
+              <optgroup label="Romboedric">
+                <option value="crystalSystem1">23. pyramid trigonal</option>
+                <option value="crystalSystem2">24. rhombohedron</option>
+                <option value="crystalSystem3">25. trigonal trapezoid</option>
+                <option value="crystalSystem2">26. pyramid ditrigonal</option>
+                <option value="crystalSystem3">
+                  27. scalenohedron - rhombohedron
+                </option>
+              </optgroup>
+              <optgroup label="Monoclinic">
+                <option value="crystalSystem1">28. dome or dihedral</option>
+                <option value="crystalSystem2">29. dome</option>
+                <option value="crystalSystem3">30. prism</option>
+              </optgroup>
+              <optgroup label="Triclinic">
+                <option value="crystalSystem1">31. single-sided shapes</option>
+                <option value="crystalSystem2">32. pinacoide</option>
+              </optgroup>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      [ngClass]="{
+        'tab-pane': true,
+        fade: true,
+        show: activeTab === 'properties',
+        active: activeTab === 'properties'
+      }"
+    >
+      <div class="row">
+        <div class="col-5 offset-1">
+          <br />
+          <label for="formula" class="form-label">Formula</label>
+          <input
+            type="text"
+            class="form-control"
+            id="formula"
+            placeholder="FeO2"
+            aria-describedby="name_Help"
+          />
+        </div>
+        <div class="col-5">
+          <br />
+          <label for="incertitud" class="form-label">Incertitud</label>
+          <input
+            type="text"
+            class="form-control"
+            id="incertitud"
+            placeholder="0.01"
+            aria-describedby="name_Help"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-5 offset-1">
+          <label for="html5-number-input" class="col-md-2 col-form-label"
+            >Density</label
+          >
+          <div class="col-md-10">
+            <input
+              class="form-control"
+              type="number"
+              value="2.4"
+              max="7"
+              min="0.1"
+              step="0.1"
+              id="html5-number-input"
+            />
+          </div>
+        </div>
+        <div class="col-5">
+          <label class="col-md-7 col-form-label" for="fusion_temp"
+            >T. fusion</label
+          >
+          <div class="input-group">
+            <input
+              type="text"
+              class="form-control"
+              id="fusion_temp"
+              aria-label="1200"
+            />
+            <span class="input-group-text">
+              <select
+                style="
+                  background-color: rgba(1, 1, 1, 0);
+                  border: none !important;
+                "
+              >
+                <option>°C</option>
+                <option>°F</option>
+                <option>K</option>
+              </select>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-5 offset-1">
+          <label for="html5-number-input" class="col-md-7 col-form-label"
+            >Mohs scale min</label
+          >
+          <input
+            class="form-control"
+            type="number"
+            value="2.4"
+            max="10"
+            min="0.1"
+            step="0.1"
+            id="html5-number-input"
+          />
+        </div>
+        <div class="col-5">
+          <label for="html5-number-input" class="col-md-7 col-form-label"
+            >Mohs scale max</label
+          >
+          <input
+            class="form-control"
+            type="number"
+            value="4.4"
+            max="10"
+            min="0.1"
+            step="0.1"
+            id="html5-number-input"
+          />
+        </div>
+      </div>
+      <br />
+      <div style="border: 1px solid gray"></div>
+      <div class="row">
+        <div class="col-md-3 offset-md-1">
+          <br />
+          <label for="crytal_class" class="form-label">Luster</label>
+          <select
+            class="form-select"
+            id="Luster"
+            name="Luster"
+            aria-label="Default select example"
+            multiple
+          >
+            <option value="">---None---</option>
+            <option value="metalluster">Metallic</option>
+            <optgroup label="Non-metallic">
+              <option value="Vitreous">Vitreous</option>
+              <option value="Dull">Dull</option>
+              <option value="Pearly">Pearly</option>
+              <option value="Resineous">Resineous</option>
+              <option value="Silky">Silky</option>
+              <option value="Adamantine">Adamantine</option>
+              <option value="Submetallic">Submetallic</option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="col-md-7 col-sm-10">
+          <div class="row">
+            <div class="col-6">
+              <br />
+              <label for="macle" class="col-md-7 form-label">Macle</label>
+              <textarea class="form-control" id="macle" rows="4"></textarea>
+            </div>
+            <div class="col-6">
+              <br />
+              <label for="cleavage" class="col-md-7 form-label">Cleavage</label>
+              <textarea class="form-control" id="cleavage" rows="4"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-5 offset-1">
+          <label for="crytal_class" class="form-label">Transparence</label>
+          <select
+            class="form-select"
+            id="Transparence"
+            name="Transparence"
+            aria-label="Default select example"
+          >
+            <option value="">---None---</option>
+            <option value="Transparent">Transparent</option>
+            <option value="Translucent">Translucent</option>
+            <option value="Opaque">Opaque</option>
+            <option value="Transparent to translucent">
+              Transparent to translucent
+            </option>
+            <option value="Translucent to opaque">Translucent to opaque</option>
+            <option value="Transparent to opaque">Transparent to opaque</option>
+          </select>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div
+          class="col-lg-5 offset-lg-1 col-md-8 offset-md-2 col-sm-10 offset-sm-1 col-xs-12"
+        >
+          <div class="accordion" id="accordionLeft">
+            <div class="card">
+              <h2 class="accordion-header" id="headingLeftOne">
+                <button
+                  type="button"
+                  class="accordion-button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseLeftOne"
+                  aria-expanded="true"
+                  aria-controls="collapseLeftOne"
+                >
+                  Pleochroism
+                </button>
+              </h2>
+              <div
+                id="collapseLeftOne"
+                class="accordion-collapse collapse show"
+                aria-labelledby="headingLeftOne"
+                data-bs-parent="#accordionLeft"
+              >
+                <div class="accordion-body">
+                  <div class="row">
+                    <div class="col-md-4 col-sm-8">
+                      <label>Type:</label>
+                      <div class="form-check mt-3">
+                        <input
+                          name="default-radio-1"
+                          class="form-check-input"
+                          type="radio"
+                          value=""
+                          id="none_pleochroism"
+                        />
+                        <label class="form-check-label" for="none_pleochroism">
+                          None
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          name="default-radio-1"
+                          class="form-check-input"
+                          type="radio"
+                          value=""
+                          id="birefringent_pleochroism"
+                          checked
+                        />
+                        <label
+                          class="form-check-label"
+                          for="birefringent_pleochroism"
+                        >
+                          Birefringent
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          name="default-radio-1"
+                          class="form-check-input"
+                          type="radio"
+                          value=""
+                          id="absorption_pleochroism"
+                          checked
+                        />
+                        <label
+                          class="form-check-label"
+                          for="absorption_pleochroism"
+                        >
+                          Absorption
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          name="default-radio-1"
+                          class="form-check-input"
+                          type="radio"
+                          value=""
+                          id="chemical_pleochroism"
+                          checked
+                        />
+                        <label
+                          class="form-check-label"
+                          for="chemical_pleochroism"
+                        >
+                          Chemical
+                        </label>
+                      </div>
+                      <br />
+                    </div>
+                    <div class="col-md-8 col-sm-10">
+                      <label for="description_pleochroism" class="form-label"
+                        >Describe</label
+                      >
+                      <textarea
+                        class="form-control"
+                        id="description_pleochroism"
+                        rows="4"
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <h2 class="accordion-header" id="headingLeftTwo">
+                <button
+                  type="button"
+                  class="accordion-button collapsed"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseLeftTwo"
+                  aria-expanded="false"
+                  aria-controls="collapseLeftTwo"
+                >
+                  Magnetism
+                </button>
+              </h2>
+              <div
+                id="collapseLeftTwo"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingLeftTwo"
+                data-bs-parent="#accordionLeft"
+              >
+                <div class="accordion-body">
+                  <div class="row">
+                    <div class="col-md-4 col-sm-8">
+                      <label>Types:</label>
+                      <div class="form-check mt-3">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          value=""
+                          id="none_magnetism"
+                          checked
+                        />
+                        <label class="form-check-label" for="none_magnetism">
+                          None
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          value="diamagnetism"
+                          id="diamagnetism_magnetism"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="diamagnetism_magnetism"
+                        >
+                          Diamagnetism
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          value="paramagnetism"
+                          id="paramagnetism_magnetism"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="paramagnetism_magnetism"
+                        >
+                          Paramagnetism
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          value="ferromagnetism"
+                          id="ferromagnetism_magnetism"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="ferromagnetism_magnetism"
+                        >
+                          Ferromagnetism
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          value="antiferromagnetism_magnetism"
+                          id="antiferromagnetism_magnetism"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="antiferromagnetism_magnetism"
+                        >
+                          Antiferromagnetism
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          value="ferrimagnetism"
+                          id="ferrimagnetism_magnetism"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="ferrimagnetism_magnetism"
+                        >
+                          Ferrimagnetism
+                        </label>
+                      </div>
+                      <br />
+                    </div>
+                    <div class="col-md-7 offset-md-1 col-sm-10">
+                      <label for="description_magnetism" class="form-label"
+                        >Describe</label
+                      >
+                      <textarea
+                        class="form-control"
+                        id="description_magnetism"
+                        rows="6"
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <h2 class="accordion-header" id="headingLeftThree">
+                <button
+                  type="button"
+                  class="accordion-button collapsed"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseLeftThree"
+                  aria-expanded="false"
+                  aria-controls="collapseLeftThree"
+                >
+                  Radioactivity
+                </button>
+              </h2>
+              <div
+                id="collapseLeftThree"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingLeftThree"
+                data-bs-parent="#accordionLeft"
+              >
+                <div class="accordion-body">
+                  <div class="row">
+                    <div class="col-md-5 col-sm-8">
+                      <label>Types:</label>
+                      <div class="form-check mt-3">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          value=""
+                          id="none_radioactivity"
+                          checked
+                        />
+                        <label
+                          class="form-check-label"
+                          for="none_radioactivity"
+                        >
+                          None
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          value="alpha"
+                          id="alpha_radioactivity"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="alpha_radioactivity"
+                        >
+                          Alpha ray
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          value="beta"
+                          id="beta_radioactivity"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="beta_radioactivity"
+                        >
+                          Beta ray
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          value="gamma"
+                          id="gamma_radiactivity"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="gamma_radiactivity"
+                        >
+                          Gamma ray
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          value="radon emission"
+                          id="radonemission_radioactivity"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="radonemission_radioactivity"
+                        >
+                          Radon emission
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          value="spontaneous fission"
+                          id="spontaneousfision_radiactivity"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="spontaneousfision_radiactivity"
+                        >
+                          Spontaenous fission
+                        </label>
+                      </div>
+                      <br />
+                    </div>
+                    <div class="col-md-7 col-sm-10">
+                      <label for="description_radioactivity" class="form-label"
+                        >Describe</label
+                      >
+                      <textarea
+                        class="form-control"
+                        id="description_radioactivity"
+                        rows="6"
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <h2 class="accordion-header" id="headingLeftFour">
+                <button
+                  type="button"
+                  class="accordion-button collapsed"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseLeftFour"
+                  aria-expanded="false"
+                  aria-controls="collapseLeftFour"
+                >
+                  Fluorescence
+                </button>
+              </h2>
+              <div
+                id="collapseLeftFour"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingLeftFour"
+                data-bs-parent="#accordionLeft"
+              >
+                <div class="accordion-body">
+                  <div class="row">
+                    <div class="col-4">
+                      <label>Types:</label>
+                    </div>
+                    <div class="col-8">
+                      <label for="description_fluorescence" class="form-label"
+                        >Describe</label
+                      >
+                      <textarea
+                        class="form-control"
+                        id="description_fluorescence"
+                        rows="4"
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />
+        <div
+          class="col-lg-5 offset-lg-0 col-md-8 offset-md-2 col-sm-10 offset-sm-1 col-xs-12"
+        >
+          <div class="accordion" id="accordionRight">
+            <div class="card">
+              <h2 class="accordion-header" id="headingRightOne">
+                <button
+                  type="button"
+                  class="accordion-button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseRightOne"
+                  aria-expanded="true"
+                  aria-controls="collapseRightOne"
+                >
+                  Chemical behaviour
+                </button>
+              </h2>
+              <div
+                id="collapseRightOne"
+                class="accordion-collapse collapse show"
+                aria-labelledby="headingRightOne"
+                data-bs-parent="#accordionRight"
+              >
+                <div class="accordion-body">
+                  <div class="row">
+                    <div class="col-12">
+                      <label
+                        for="description_chemicalbehaviour"
+                        class="form-label"
+                        >Describe</label
+                      >
+                      <textarea
+                        class="form-control"
+                        id="description_chemicalbehaviour"
+                        rows="6"
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <h2 class="accordion-header" id="headingRightTwo">
+                <button
+                  type="button"
+                  class="accordion-button collapsed"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseRightTwo"
+                  aria-expanded="false"
+                  aria-controls="collapseRightTwo"
+                >
+                  Associations
+                </button>
+              </h2>
+              <div
+                id="collapseRightTwo"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingRightTwo"
+                data-bs-parent="#accordionRight"
+              >
+                <div class="accordion-body">
+                  <div class="accordion" id="accordionSubRight">
+                    <div class="card">
+                      <h2 class="accordion-header" id="headingSubRightOne">
+                        <button
+                          type="button"
+                          class="accordion-button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseSubRightOne"
+                          aria-expanded="true"
+                          aria-controls="collapseSubRightOne"
+                        >
+                          Minerals
+                        </button>
+                      </h2>
+                      <div
+                        id="collapseSubRightOne"
+                        class="accordion-collapse collapse show"
+                        aria-labelledby="headingSubRightOne"
+                        data-bs-parent="#accordionSubRight"
+                      >
+                        <div class="accordion-body">
+                          <app-association-form></app-association-form>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <h2 class="accordion-header" id="headingSubRightTwo">
+                        <button
+                          type="button"
+                          class="accordion-button collapsed"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseSubRightTwo"
+                          aria-expanded="false"
+                          aria-controls="collapseSubRightTwo"
+                        >
+                          Molecules
+                        </button>
+                      </h2>
+                      <div
+                        id="collapseSubRightTwo"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="headingSubRightTwo"
+                        data-bs-parent="#accordionSubRight"
+                      >
+                        <div class="accordion-body">
+                          <app-association-form></app-association-form>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <h2 class="accordion-header" id="headingSubRightThree">
+                        <button
+                          type="button"
+                          class="accordion-button collapsed"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseSubRightThree"
+                          aria-expanded="false"
+                          aria-controls="collapseSubRightThree"
+                        >
+                          Chemical elements
+                        </button>
+                      </h2>
+                      <div
+                        id="collapseSubRightThree"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="headingSubRightThree"
+                        data-bs-parent="#accordionSubRight"
+                      >
+                        <div class="accordion-body">
+                          <app-association-form></app-association-form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+    </div>
+
+    <div
+      [ngClass]="{
+        'tab-pane': true,
+        fade: true,
+        show: activeTab === 'color',
+        active: activeTab === 'color'
+      }"
+    >
+      <div class="row">
+        <div class="col-10 offset-1">
+          <br />
+          <app-color-picker></app-color-picker>
+        </div>
+      </div>
+    </div>
+
+    <div
+      [ngClass]="{
+        'tab-pane': true,
+        fade: true,
+        show: activeTab === 'history',
+        active: activeTab === 'history'
+      }"
+    >
+      <div class="row">
+        <div class="col-5 offset-1">
+          <br />
+          <label for="description_discovery" class="form-label"
+            >Discovery</label
+          >
+          <textarea
+            class="form-control"
+            id="description_discovery"
+            rows="3"
+          ></textarea>
+        </div>
+        <div class="col-5">
+          <br />
+          <label for="description_topotype" class="form-label">Topotype</label>
+          <textarea
+            class="form-control"
+            id="description_topotype"
+            rows="3"
+          ></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-10 offset-1">
+          <label for="description_chemicalbehaviour" class="form-label"
+            >Gite</label
+          >
+          <textarea
+            class="form-control"
+            id="description_chemicalbehaviour"
+            rows="3"
+          ></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-10 offset-1">
+          <label for="description_chemicalbehaviour" class="form-label"
+            >Use</label
+          >
+          <textarea
+            class="form-control"
+            id="description_chemicalbehaviour"
+            rows="6"
+          ></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-10 offset-1">
+          <label for="description_chemicalbehaviour" class="form-label"
+            >Synonyme</label
+          >
+          <textarea
+            class="form-control"
+            id="description_chemicalbehaviour"
+            rows="3"
+          ></textarea>
+        </div>
+      </div>
+      <br />
+    </div>
+
+    <div
+      [ngClass]="{
+        'tab-pane': true,
+        fade: true,
+        show: activeTab === 'location',
+        active: activeTab === 'location'
+      }"
+    >
+      <br />
+      <app-location-form></app-location-form>
+    </div>
+
+    <div
+      [ngClass]="{
+        'tab-pane': true,
+        fade: true,
+        show: activeTab === 'user',
+        active: activeTab === 'user'
+      }"
+    >
+      <div class="card-body">
+        <form class="row">
+          <div
+            class="col-lg-4 offset-lg-1 col-md-5 offset-md-1 col-sm-8 offset-sm-2 col-xs-10 offset-xs-1"
+          >
+            <br />
+            <label class="form-label" for="basic-icon-default-fullname"
+              >Full Name</label
+            >
+            <div class="input-group input-group-merge">
+              <span id="basic-icon-default-fullname2" class="input-group-text"
+                ><i class="bx bx-user"></i
+              ></span>
+              <input
+                type="text"
+                class="form-control"
+                id="basic-icon-default-fullname"
+                placeholder="John Doe"
+                aria-label="John Doe"
+                aria-describedby="basic-icon-default-fullname2"
+              />
+            </div>
+          </div>
+          <div
+            class="col-lg-4 offset-lg-1 col-md-5 offset-md-1 col-sm-8 offset-sm-2 col-xs-10 offset-xs-1"
+          >
+            <br />
+            <label class="form-label" for="basic-icon-default-email"
+              >Email</label
+            >
+            <div class="input-group input-group-merge">
+              <span class="input-group-text"
+                ><i class="bx bx-envelope"></i
+              ></span>
+              <input
+                type="text"
+                id="basic-icon-default-email"
+                class="form-control"
+                placeholder="john.doe"
+                aria-label="john.doe"
+                aria-describedby="basic-icon-default-email2"
+              />
+              <span id="basic-icon-default-email2" class="input-group-text"
+                >&#64;</span
+              >
+              <input
+                type="text"
+                id="basic-icon-default-email"
+                class="form-control"
+                placeholder="gmail.com"
+                aria-label="gmail.com"
+                aria-describedby="basic-icon-default-email2"
+              />
+            </div>
+            <div class="form-text">You can use letters, numbers & periods</div>
+          </div>
+          <div
+            class="col-lg-4 offset-lg-1 col-md-5 offset-md-1 col-sm-8 offset-sm-2 col-xs-10 offset-xs-1"
+          >
+            <label class="form-label" for="basic-icon-default-company"
+              >Company</label
+            >
+            <div class="input-group input-group-merge">
+              <span id="basic-icon-default-company2" class="input-group-text"
+                ><i class="bx bx-buildings"></i
+              ></span>
+              <input
+                type="text"
+                id="basic-icon-default-company"
+                class="form-control"
+                placeholder="ACME Inc."
+                aria-label="ACME Inc."
+                aria-describedby="basic-icon-default-company2"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+      <br />
+    </div>
+  </div>
+</div>
+<br />
+<div class="row">
+  <div class="col-1 offset-3">
+    <button mat-flat-button class="submit_button">Submit</button>
+  </div>
+  <div class="col-1 offset-2">
+    <button mat-flat-button class="cancle_button">Cancel</button>
+  </div>
+</div>

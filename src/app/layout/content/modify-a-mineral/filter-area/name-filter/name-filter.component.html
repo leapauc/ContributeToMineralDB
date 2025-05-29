@@ -1,0 +1,17 @@
+<div>
+  <div class="row">
+    <div class="col-md-4 col-sm-6 col-xs-8">
+      <h3>Mineral name filter</h3>
+      <input
+        class="form-control"
+        (input)="searchMinerals(filter.value)"
+        [(ngModel)]="mineral.namemineral"
+        id="name_filt"
+        matInput
+        placeholder="Search mineral"
+        type="text"
+        #filter
+      />
+    </div>
+  </div>
+</div>

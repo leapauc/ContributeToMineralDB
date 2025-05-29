@@ -1,0 +1,491 @@
+<div>
+  <div (click)="toggle()">
+    <h3 id="complex-filter">{{ isOpen ? "▼" : "►" }} Complex filter area</h3>
+  </div>
+
+  <div *ngIf="isOpen">
+    <div class="row accordion-body">
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="mb-3">
+          <br />
+          <label for="crytal_system" class="form-label"
+            >Crystallin system</label
+          >
+          <select
+            class="form-select"
+            id="crytal_system"
+            aria-label="Default select example"
+            multiple
+          >
+            <option value="">---None---</option>
+            <option value="crystalSystem1">Cubic - Isometric</option>
+            <option value="crystalSystem2">Tetragonal</option>
+            <option value="crystalSystem3">Orthorhombic</option>
+            <option value="crystalSystem4">Hexagonal</option>
+            <option value="crystalSystem5">Trigonal</option>
+            <option value="crystalSystem6">Monoclinic</option>
+            <option value="crystalSystem7">Triclinic</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="mb-3">
+          <br />
+          <label for="crytal_class" class="form-label">Crystallin class</label>
+          <select
+            class="form-select"
+            id="crytal_class"
+            aria-label="Default select example"
+            multiple
+          >
+            <option value="">---None---</option>
+            <optgroup label="Cubic-Isometric">
+              <option value="crystalSystem1">1. pentagonotritetrahedron</option>
+              <option value="crystalSystem2">
+                2. diplohedron dodecahedron
+              </option>
+              <option value="crystalSystem3">3. pentagonotrioctaedric</option>
+              <option value="crystalSystem4">
+                4. hexotetrahedron to tetrahedron
+              </option>
+              <option value="crystalSystem5">5. hexooctahedron to cube</option>
+            </optgroup>
+            <optgroup label="Tetragonal">
+              <option value="crystalSystem1">6. tetragonal pyramid</option>
+              <option value="crystalSystem2">
+                7. tetragonal trapezohedron
+              </option>
+              <option value="crystalSystem3">8. tetragonal dipyramid</option>
+              <option value="crystalSystem4">
+                9. tetragonal trapezohedron
+              </option>
+              <option value="crystalSystem5">10. ditetragonal pyramid</option>
+              <option value="crystalSystem4">
+                11. tetragonal scalenohedron
+              </option>
+              <option value="crystalSystem5">12. ditetragonal dipyramid</option>
+            </optgroup>
+            <optgroup label="Orthorhombic">
+              <option value="crystalSystem1">
+                13. orthohorhombic tetrahedron
+              </option>
+              <option value="crystalSystem2">14. orthothombic pyramid</option>
+              <option value="crystalSystem3">15. octaedre orthorhombic</option>
+            </optgroup>
+            <optgroup label="Hexagonal">
+              <option value="crystalSystem1">16. hexagonal pyramid</option>
+              <option value="crystalSystem2">17. triangular dipyramid</option>
+              <option value="crystalSystem3">18. hexagonal dipyramid</option>
+              <option value="crystalSystem1">19. hexagonal trapezoid</option>
+              <option value="crystalSystem2">
+                20. pyramid dihexagonal or pyramid hexagonale
+              </option>
+              <option value="crystalSystem3">
+                21. dipyramid prism or ditrigonal prism
+              </option>
+              <option value="crystalSystem3">22. dipyramid dihexagonal</option>
+            </optgroup>
+            <optgroup label="Romboedric">
+              <option value="crystalSystem1">23. pyramid trigonal</option>
+              <option value="crystalSystem2">24. rhombohedron</option>
+              <option value="crystalSystem3">25. trigonal trapezoid</option>
+              <option value="crystalSystem2">26. pyramid ditrigonal</option>
+              <option value="crystalSystem3">
+                27. scalenohedron - rhombohedron
+              </option>
+            </optgroup>
+            <optgroup label="Monoclinic">
+              <option value="crystalSystem1">28. dome or dihedral</option>
+              <option value="crystalSystem2">29. dome</option>
+              <option value="crystalSystem3">30. prism</option>
+            </optgroup>
+            <optgroup label="Triclinic">
+              <option value="crystalSystem1">31. single-sided shapes</option>
+              <option value="crystalSystem2">32. pinacoide</option>
+            </optgroup>
+          </select>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <br />
+        <label for="group" class="form-label">Group</label>
+        <input
+          type="text"
+          class="form-control"
+          id="group"
+          placeholder="sulfite"
+          aria-describedby="name_Help"
+        />
+      </div>
+    </div>
+    <br />
+    <div class="separator_dashed"></div>
+    <br />
+    <div class="row">
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <br />
+        <label for="formula" class="form-label">Formula</label>
+        <input
+          type="text"
+          class="form-control"
+          id="formula"
+          placeholder="FeO2"
+          aria-describedby="name_Help"
+        />
+      </div>
+      <div class="col-md-2 col-sm-6 col-xs-12">
+        <br />
+        <label for="formula" class="form-label">Density</label>
+        <input
+          class="form-control"
+          type="number"
+          value="2.4"
+          max="7"
+          min="0.1"
+          step="0.1"
+          id="html5-number-input"
+        />
+      </div>
+      <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12">
+        <br />
+        <label for="formula" class="form-label">Mohs scale</label>
+        <div class="input-group">
+          <input
+            class="form-control"
+            type="number"
+            value=""
+            max="10"
+            min="0.1"
+            step="0.1"
+            id="html5-number-input"
+          />
+          <span class="input-group-text">
+            <select
+              style="
+                background-color: rgba(1, 1, 1, 0);
+                border: none !important;
+              "
+            >
+              <option>&#60;</option>
+              <option>&#8804;</option>
+              <option>&#62;</option>
+              <option>&#8805;</option>
+            </select>
+          </span>
+          <label style="padding: 10px">mohs</label>
+          <span class="input-group-text">
+            <select
+              style="
+                background-color: rgba(1, 1, 1, 0);
+                border: none !important;
+              "
+            >
+              <option>&#61;</option>
+              <option>&#60;</option>
+              <option>&#8804;</option>
+              <option>&#62;</option>
+              <option>&#8805;</option>
+            </select>
+          </span>
+          <input
+            class="form-control"
+            type="number"
+            value=""
+            max="10"
+            min="0.1"
+            step="0.1"
+            id="html5-number-input"
+          />
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <br />
+        <label for="formula" class="form-label">Fusion t.</label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="fusion_temp" />
+          <span class="input-group-text">
+            <select
+              style="
+                background-color: rgba(1, 1, 1, 0);
+                border: none !important;
+              "
+            >
+              <option>°C</option>
+              <option>°F</option>
+              <option>K</option>
+            </select>
+          </span>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <label for="crytal_class" class="form-label">Luster</label>
+        <select
+          class="form-select"
+          id="Luster"
+          name="Luster"
+          aria-label="Default select example"
+          multiple
+        >
+          <option value="">---None---</option>
+          <option value="metalluster">Metallic</option>
+          <optgroup label="Non-metallic">
+            <option value="Vitreous">Vitreous</option>
+            <option value="Dull">Dull</option>
+            <option value="Pearly">Pearly</option>
+            <option value="Resineous">Resineous</option>
+            <option value="Silky">Silky</option>
+            <option value="Adamantine">Adamantine</option>
+            <option value="Submetallic">Submetallic</option>
+          </optgroup>
+        </select>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <label for="crytal_class" class="form-label">Transparence</label>
+        <select
+          class="form-select"
+          id="Transparence"
+          name="Transparence"
+          aria-label="Default select example"
+        >
+          <option value="">---None---</option>
+          <option value="Transparent">Transparent</option>
+          <option value="Translucent">Translucent</option>
+          <option value="Opaque">Opaque</option>
+          <option value="Transparent to translucent">
+            Transparent to translucent
+          </option>
+          <option value="Translucent to opaque">Translucent to opaque</option>
+          <option value="Transparent to opaque">Transparent to opaque</option>
+        </select>
+      </div>
+    </div>
+    <br />
+    <div class="separator_dashed"></div>
+    <br />
+    <div class="row">
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <label>Pleochroism</label>
+        <div class="form-check mt-3">
+          <input
+            name="default-radio-1"
+            class="form-check-input"
+            type="radio"
+            value=""
+            id="none_pleochroism_filt"
+            checked
+          />
+          <label class="form-check-label" for="none_pleochroism_filt">
+            None
+          </label>
+        </div>
+        <div class="form-check">
+          <input
+            name="default-radio-1"
+            class="form-check-input"
+            type="radio"
+            value="birefringent"
+            id="birefringent_pleochroism_filt"
+          />
+          <label class="form-check-label" for="birefringent_pleochroism_filt">
+            Birefringent
+          </label>
+        </div>
+        <div class="form-check">
+          <input
+            name="default-radio-1"
+            class="form-check-input"
+            type="radio"
+            value="absorption"
+            id="absorption_pleochroism_filt"
+          />
+          <label class="form-check-label" for="absorption_pleochroism_filt">
+            Absorption
+          </label>
+        </div>
+        <div class="form-check">
+          <input
+            name="default-radio-1"
+            class="form-check-input"
+            type="radio"
+            value="chemical"
+            id="chemical_pleochroism_filt"
+          />
+          <label class="form-check-label" for="chemical_pleochroism_filt">
+            Chemical
+          </label>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <label>Magnetism</label>
+        <div class="form-check mt-3">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="none_magnetism"
+            checked
+          />
+          <label class="form-check-label" for="none_magnetism"> None </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value="diamagnetism"
+            id="diamagnetism_magnetism"
+          />
+          <label class="form-check-label" for="diamagnetism_magnetism">
+            Diamagnetism
+          </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value="paramagnetism"
+            id="paramagnetism_magnetism"
+          />
+          <label class="form-check-label" for="paramagnetism_magnetism">
+            Paramagnetism
+          </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value="ferromagnetism"
+            id="ferromagnetism_magnetism"
+          />
+          <label class="form-check-label" for="ferromagnetism_magnetism">
+            Ferromagnetism
+          </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value="antiferromagnetism_magnetism"
+            id="antiferromagnetism_magnetism"
+          />
+          <label class="form-check-label" for="antiferromagnetism_magnetism">
+            Antiferromagnetism
+          </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value="ferrimagnetism"
+            id="ferrimagnetism_magnetism"
+          />
+          <label class="form-check-label" for="ferrimagnetism_magnetism">
+            Ferrimagnetism
+          </label>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <label>Radioactivity</label>
+        <div class="form-check mt-3">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="none_radioactivity_filt"
+            checked
+          />
+          <label class="form-check-label" for="none_radioactivity_filt">
+            None
+          </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value="alpha"
+            id="alpha_radioactivity_filt"
+          />
+          <label class="form-check-label" for="alpha_radioactivity_filt">
+            Alpha ray
+          </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value="beta"
+            id="beta_radioactivity_filt"
+          />
+          <label class="form-check-label" for="beta_radioactivity_filt">
+            Beta ray
+          </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value="gamma"
+            id="gamma_radiactivity_filt"
+          />
+          <label class="form-check-label" for="gamma_radiactivity_filt">
+            Gamma ray
+          </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value="radon emission"
+            id="radonemission_radioactivity_filt"
+          />
+          <label
+            class="form-check-label"
+            for="radonemission_radioactivity_filt"
+          >
+            Radon emission
+          </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value="spontaneous fission"
+            id="spontaneousfision_radiactivity_filt"
+          />
+          <label
+            class="form-check-label"
+            for="spontaneousfision_radiactivity_filt"
+          >
+            Spontaenous fission
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; align-items: center; justify-content: center">
+      <button
+        mat-flat-button
+        (click)="filterMinerals()"
+        style="
+          background-color: green;
+          margin: 20px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        "
+      >
+        Filter
+      </button>
+      <button
+        mat-flat-button
+        (click)="clearFilter()"
+        style="background-color: red; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3)"
+      >
+        Clear
+      </button>
+    </div>
+
+    <br />
+  </div>
+  <hr />
+</div>

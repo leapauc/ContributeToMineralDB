@@ -1,0 +1,23 @@
+.tab-content {
+  border: 1px solid rgb(232, 230, 230);
+  background-color: white;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre */
+}
+
+.nav-link {
+  background-color: aliceblue; /* Couleur par défaut pour les onglets inactifs */
+  color: black;
+  transition: background-color 0.3s; /* Transition douce pour l'effet de changement de couleur */
+}
+
+.nav-link.active {
+  background-color: white; /* Couleur de fond pour l'onglet actif */
+  color: black;
+  border-bottom: none; /* Pour éviter le décalage de la bordure */
+}
+
+.nav-link:hover {
+  background-color: white; /* Couleur de fond pour l'onglet actif */
+}

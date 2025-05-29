@@ -1,0 +1,103 @@
+<div class="row" id="table_bdd">
+  <div class="col-12" style="overflow-x: auto">
+    <mat-paginator
+      [pageSizeOptions]="[5, 10, 20]"
+      showFirstLastButtons
+      aria-label="Select page"
+      style="
+        width: 500px;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+      "
+    >
+    </mat-paginator>
+
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let mineral; columns: displayedColumns"></tr>
+      <ng-container matColumnDef="edit">
+        <th mat-header-cell *matHeaderCellDef>Edit</th>
+        <td
+          mat-cell
+          *matCellDef="let mineral"
+          style="width: 50px; text-align: center"
+        >
+          <button
+            (click)="populateMineralFormFields(mineral)"
+            style="
+              background-color: blue;
+              color: white;
+              border: none;
+              border-radius: 4px;
+              padding: 0;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 30px;
+              height: 30px;
+            "
+          >
+            <mat-icon style="font-size: 20px">edit</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <!-- <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef>Delete</th>
+        <td
+          mat-cell
+          *matCellDef="let mineral"
+          style="width: 50px; text-align: center"
+        >
+          <button
+            (click)="deleteMineralFromDB(mineral.mineralid)"
+            style="
+              background-color: red;
+              color: white;
+              border: none;
+              border-radius: 4px;
+              padding: 0;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 30px;
+              height: 30px;
+            "
+          >
+            <mat-icon style="font-size: 20px">delete</mat-icon>
+          </button>
+        </td>
+      </ng-container> -->
+
+      <ng-container matColumnDef="namemineral">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+        <td mat-cell *matCellDef="let mineral">{{ mineral.namemineral }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="formula">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Formula</th>
+        <td mat-cell *matCellDef="let mineral">{{ mineral.formula }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="weightformula">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Weight</th>
+        <td mat-cell *matCellDef="let mineral">{{ mineral.weightformula }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="country">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Country</th>
+        <td mat-cell *matCellDef="let mineral">{{ mineral.country }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="groupmineralid">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Group</th>
+        <td mat-cell *matCellDef="let mineral">{{ mineral.groupmineralid }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="luster">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Luster</th>
+        <td mat-cell *matCellDef="let mineral">{{ mineral.luster }}</td>
+      </ng-container>
+    </table>
+  </div>
+</div>

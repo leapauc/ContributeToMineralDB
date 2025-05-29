@@ -1,0 +1,41 @@
+<div></div>
+<div class="row">
+  <div class="col-6 padding">
+    <div class="card">
+      <p-toast></p-toast>
+      <p-fileupload
+        name="demo[]"
+        url="https://www.primefaces.org/cdn/api/upload.php"
+        (onUpload)="onUpload($event)"
+        [multiple]="true"
+        accept=".txt,.csv"
+        maxFileSize="1000000"
+        mode="advanced"
+      >
+        <ng-template #empty>
+          <div class="flex items-center justify-center flex-col">
+            <div class="centered">
+              <div class="upload-icon">
+                <!-- Appliquez la classe ici -->
+                <i
+                  class="pi pi-cloud-upload !border-2 !rounded-full !text-4xl !text-muted-color"
+                ></i>
+              </div>
+            </div>
+
+            <p class="mt-6 mb-0 centered">
+              Drag and drop files to here to upload.
+            </p>
+          </div>
+        </ng-template>
+        <ng-template #content>
+          <ul *ngIf="uploadedFiles.length">
+            <li *ngFor="let file of uploadedFiles">
+              {{ file.name }} - {{ file.size }} bytes
+            </li>
+          </ul>
+        </ng-template>
+      </p-fileupload>
+    </div>
+  </div>
+</div>

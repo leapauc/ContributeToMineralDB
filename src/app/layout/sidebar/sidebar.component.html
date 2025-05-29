@@ -1,0 +1,164 @@
+<aside [class.collapsed]="isCollapsed" class="sidebar">
+  <!-- Menu visible uniquement si non réduit -->
+  <nav *ngIf="!isCollapsed">
+    <a routerLink="website.html">&lt; Back to Website</a><br /><br />
+    <hr />
+    <br />
+
+    <i></i>
+    <br />
+    <h2><a routerLink="/home" routerLinkActive="active">Accueil</a></h2>
+    <br /><br />
+    <hr />
+    <br />
+
+    <h5>Add information</h5>
+    <div></div>
+    <ul>
+      <li>
+        <a
+          href="javascript:void(0);"
+          (click)="toggleSubMenu('add_information')"
+        >
+          <h6>About mineral</h6>
+        </a>
+      </li>
+      <ul
+        [style.display]="openSubMenu === 'add_information' ? 'block' : 'none'"
+      >
+        <li class="margin-sidebar10">
+          <i></i
+          ><a routerLink="/add-a-mineral" routerLinkActive="active"
+            >Add a mineral</a
+          >
+        </li>
+        <li class="margin-sidebar10">
+          <i></i
+          ><a routerLink="/add-minerals" routerLinkActive="active"
+            >Add minerals</a
+          >
+        </li>
+      </ul>
+      <li>
+        <h6>
+          <i></i
+          ><a routerLink="/add-a-page" routerLinkActive="active"
+            >Add page on website</a
+          >
+        </h6>
+      </li>
+    </ul>
+    <br />
+    <hr />
+    <br />
+
+    <h5>Modify information</h5>
+    <ul class="margin-sidebar">
+      <li>
+        <h6>
+          <i></i
+          ><a routerLink="/modify-a-mineral" routerLinkActive="active"
+            >Modify a mineral</a
+          >
+        </h6>
+      </li>
+      <li>
+        <h6>
+          <i></i
+          ><a routerLink="/modify-a-page" routerLinkActive="active"
+            >Modify page on website</a
+          >
+        </h6>
+      </li>
+    </ul>
+
+    <br />
+    <hr />
+    <br />
+
+    <h5>Suggestions</h5>
+    <ul class="margin-sidebar">
+      <li>
+        <h6>
+          <i></i
+          ><a routerLink="/how-improve-DB" routerLinkActive="active"
+            >How to improve DB?</a
+          >
+        </h6>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Menu réduit -->
+  <nav *ngIf="isCollapsed">
+    <a routerLink="website.html">&lt;</a><br /><br />
+    <hr />
+    <br />
+
+    <i></i>
+    <br />
+    <h2><a routerLink="/home" routerLinkActive="active">Ac</a></h2>
+    <br /><br />
+    <hr />
+    <br />
+
+    <h5>---</h5>
+    <div></div>
+    <ul>
+      <li>
+        <a
+          href="javascript:void(0);"
+          (click)="toggleSubMenu('add_information')"
+        >
+          <h6>---</h6>
+        </a>
+      </li>
+      <ul
+        [style.display]="openSubMenu === 'add_information' ? 'block' : 'none'"
+      >
+        <li class="margin-sidebar10">
+          <i>Ami</i>
+        </li>
+        <li class="margin-sidebar10">
+          <i>Amis</i>
+        </li>
+      </ul>
+      <li>
+        <i>Apa</i>
+      </li>
+    </ul>
+    <br />
+    <hr />
+    <br />
+
+    <h5>---</h5>
+    <ul class="margin-sidebar">
+      <li>
+        <h6>
+          <i>Mmi</i>
+        </h6>
+      </li>
+      <li>
+        <h6>
+          <i>Mpa</i>
+        </h6>
+      </li>
+    </ul>
+
+    <br />
+    <hr />
+    <br />
+
+    <h5>---</h5>
+    <ul class="margin-sidebar">
+      <li>
+        <h6>
+          <i>iDB</i>
+        </h6>
+      </li>
+      <li>
+        <i>iWS</i>
+      </li>
+    </ul>
+  </nav>
+</aside>

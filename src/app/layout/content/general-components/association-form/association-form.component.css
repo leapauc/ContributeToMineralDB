@@ -1,0 +1,96 @@
+/* Personnalisation du Modal Bootstrap */
+/* Personnalisation du Modal Bootstrap */
+.modal-content {
+  position: relative; /* Permet de positionner le bouton de fermeture à l'intérieur du modal */
+  border-radius: 8px; /* Bord arrondi pour le modal */
+}
+
+.modal-header {
+  background-color: gray; /* Couleur de fond du header */
+  color: white;
+}
+
+.modal-body {
+  font-size: 16px;
+}
+
+.modal-footer {
+  background-color: #f1f1f1;
+}
+
+.modal-footer button {
+  border-radius: 5px;
+  padding: 8px 20px;
+  font-size: 14px;
+}
+
+.modal-dialog.modal-sm {
+  max-width: 400px; /* Taille plus petite du modal */
+}
+
+/* Bouton de fermeture en forme de rond */
+.btn-close {
+  position: absolute; /* Positionner le bouton dans le coin supérieur droit */
+  top: 0px; /* Espacement depuis le haut du modal */
+  right: 0px; /* Espacement depuis la droite du modal */
+  width: 40px; /* Largeur du bouton */
+  height: 40px; /* Hauteur du bouton */
+  background-color: gray; /* Couleur de fond */
+  color: white; /* Couleur de l'icône */
+  border-radius: 50%; /* Pour le rendre rond */
+  display: flex;
+  justify-content: center; /* Centrer l'icône horizontalement */
+  align-items: center; /* Centrer l'icône verticalement */
+  font-size: 20px; /* Taille de l'icône */
+  border: none; /* Retirer la bordure */
+  z-index: 1050; /* Assurer que le bouton est au-dessus du contenu */
+  cursor: pointer; /* Changer le curseur au survol */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Animation douce */
+}
+
+/* Animation de survol pour agrandir le bouton */
+.btn-close:hover {
+  transform: scale(1.2); /* Agrandir le bouton à 1.3x au survol */
+  background-color: rgb(79, 78, 78); /* Changer la couleur de fond au survol */
+}
+
+/* Optionnel : Modifier la taille du texte à l'intérieur du bouton si besoin */
+.btn-close i {
+  font-size: 20px;
+}
+
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;  /* Facultatif, pour centrer le texte à l'intérieur de la div */
+}
+
+.col-1 {
+  display: flex;
+  justify-content: center; /* Centre le contenu horizontalement */
+  align-items: center; /* Centre le contenu verticalement */
+  height: 100%; /* Assurez-vous que la colonne a une hauteur définie */
+}
+
+.action-button {
+  background-color: green; /* Fond vert */
+  color: white; /* Texte blanc */
+  border: none; /* Pas de bordure */
+  border-radius: 50%; /* Arrondir le bouton */
+  padding: 10px 6px 10px 10px; /* Espacement interne */
+  font-size: 16px; /* Taille de la police */
+  cursor: pointer; /* Curseur en main */
+  display: flex; /* Utiliser flex pour centrer l'icône */
+  align-items: center; /* Centrer verticalement l'icône */
+  justify-content: center; /* Centrer horizontalement l'icône */
+}
+
+.action-button i {
+  margin-right: 5px; /* Espacement entre l'icône et le texte */
+}
+
+.action-button:hover {
+  background-color: darkgreen; /* Couleur de fond au survol */
+}

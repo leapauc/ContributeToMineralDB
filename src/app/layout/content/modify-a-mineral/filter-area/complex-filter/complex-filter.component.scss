@@ -1,0 +1,14 @@
+.separator {
+  border: 1px solid gray;
+}
+
+.separator_dashed {
+  border: 1px dashed gray;
+}
+
+#complex-filter {
+  &:hover {
+    color: darkgray;
+    cursor: pointer;
+  }
+}

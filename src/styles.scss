@@ -1,1 +1,55 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  &:hover {
+    color: darkgray;
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+html,
+body,
+app-root {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+h1 {
+  padding: 1%;
+}
+
+.centered {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.cancle_button {
+  background-color: red;
+  padding: 10px;
+  color: white;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.submit_button {
+  background-color: green;
+  padding: 10px;
+  color: white;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}

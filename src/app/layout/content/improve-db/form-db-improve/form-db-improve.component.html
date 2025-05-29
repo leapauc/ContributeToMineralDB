@@ -1,0 +1,43 @@
+<div id="content">
+  <br />
+  <div class="row">
+    <div class="col-md-5 col-sm-8 col-xs-10 offset-xs-1">
+      <div class="mb-3">
+        <label for="crytal_system" class="form-label"
+          >Modification subject:</label
+        >
+        <select
+          class="form-select"
+          id="crytal_system"
+          aria-label="Default select example"
+          required
+        >
+          <option value="">---None---</option>
+          <option value="Struture">Struture</option>
+          <option value="crystalSystem2">Action on DB</option>
+          <option value="crystalSystem3">SGBD</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-7 col-md-8 col-sm-10 col-xs-10 offset-xs-1">
+      <div class="mb-3">
+        <label for="db-suggestion" class="col-md-7 form-label"
+          >Suggestion:</label
+        ><br />
+        <textarea class="db-suggestion" id="db-suggestion"></textarea>
+      </div>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-1 offset-3">
+      <button mat-flat-button class="submit_button">Submit</button>
+    </div>
+    <div class="col-1 offset-2">
+      <button mat-flat-button class="cancle_button">Cancel</button>
+    </div>
+  </div>
+</div>

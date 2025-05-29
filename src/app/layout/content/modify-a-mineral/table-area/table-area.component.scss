@@ -1,0 +1,34 @@
+#table_bdd {
+  margin: 30px;
+}
+/* Style de la scrollbar */
+#table_bdd ::-webkit-scrollbar {
+  width: 4px; /* Largeur de la scrollbar */
+  height: 6px;
+}
+
+/* Style de la piste de la scrollbar (background) */
+#table_bdd ::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Couleur de fond de la piste (background) */
+}
+
+/* Style du bouton de la scrollbar (thumb) */
+#table_bdd ::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    to bottom,
+    #ffffff,
+    #87ceeb
+  ); /* Dégradé bleu clair */
+  border-radius: 4px; /* Coins arrondis pour le bouton */
+  border: 1px solid #87ceeb;
+}
+
+/* Optionnel : Style au survol du bouton de la scrollbar */
+#table_bdd ::-webkit-scrollbar-thumb:hover {
+  border: 1px solid #5a97af;
+  background: linear-gradient(
+    to bottom,
+    aliceblue,
+    #5a97af
+  ); /* Changer le dégradé au survol */
+}
